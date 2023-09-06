@@ -1,0 +1,68 @@
+Project ProjectAI {
+  database_type: 'PostgreSQL'
+  Note: '''
+    # Documentation 
+    ## Tech Stack
+    - NodeJS
+    - NestJs
+    - Prisma
+    - TypeScript
+    - PostgreSQL
+    - Redis
+    - JWT
+    - Logtail
+    - ElasticSearch
+    - AWS S3
+    - Sendinblue
+    - Docker
+    - Github Actions
+    - Swagger
+    - Slack
+    - Pm2
+    - Nginx
+    
+    ## Features
+    
+    **Prisma**
+    - Prisma for ORM
+    - Auto-generated types, entity & migrations
+
+    **PostgreSQL**
+    - Relational database for storing data
+    - DataTypes: JSON, JSONB, UUID, ENUM, ARRAY
+    
+    **Redis**
+    - Redis for caching
+    - Redis for temporary data storage
+
+    **Firestore**
+    - End-to-end encryption chat storage
+    - Firestore for storing chat data
+
+    **ElasticSearch**
+    - ElasticSearch for full-text search
+
+    **AWS S3**
+    - AWS S3 for storing attachments
+    - AttachmentTypes: image, video, audio, document
+
+    **Sendinblue**
+    - Sendinblue for sending emails
+
+    **JWT Authentication**
+    - JWT Based Authentication for API
+    - In : Header | Cookies
+    - API key authentication
+
+    **Docker**
+    - Docker for containerization
+    - Docker for deployment
+
+    **Github Actions**
+    - Github Actions for CI/CD
+    - Github Actions for auto deployment
+    - Deployment trigger on git push
+    - Deployment updates on slack
+
+  '''
+}

@@ -1,0 +1,21 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+generator nestjsDto {
+  provider = "prisma-nest-dto"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// generator dbml {
+//   provider = "prisma-dbml-generator"
+// }
+
+// generator erd {
+//   provider = "prisma-erd-generator"
+// }

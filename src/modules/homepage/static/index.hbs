@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PROJECT-AI API</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        {{!-- <img src="logo.svg" alt="logo" /> --}}
+
+        <h1 style="padding:30px">PROJECT-AI API</h1>
+        <div id="table-content">
+            <table>
+                <tr>
+                    <th style="text-align:left">Service</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Server</td>
+                    {{!-- <td> <span class="{{server.status}}">{{server.status}}</span></td> --}}
+                    <td> <span class="up">up</span></td>
+                </tr>
+                <tr>
+                    <td>Database</td>
+                    {{!-- <td> <span class="{{gateway}}">{{gateway}}</span></td> --}}
+                    <td> <span class="up">up</span></td>
+                </tr>
+                <tr>
+                    <td>Redis</td>
+                    {{!-- <td><span class="{{redis}}">{{redis}}</span></td> --}}
+                    <td> <span class="up">up</span></td>
+                </tr>
+                <tr>
+                    <td>API</td>
+                    {{!-- <td> <span class="{{gateway}}">{{gateway}}</span></td> --}}
+                    <td> <span class="up">up</span></td>
+                </tr>
+
+            </table>
+            <div class="errors {{server.isError}}">{{server.errors}}</div>
+            <div class="btn-container">
+                <div class="btn green" onclick="window.location.href='/swagger'">Test API
+                </div>
+                <a href="https://dbdocs.io/Rsys/ProjectAI" target="_blank">
+                    <div class="btn red">Documentation</div>
+                </a>
+            </div>
+        </div>
+        <div id="log-content" class="log-content">
+            <div class="flex align-center">
+                <img src="back.svg" alt="back" class="back" onclick="back()">
+                <h3>Error Logs:</h3>
+            </div>
+            <div id="logs" class="logs"></div>
+        </div>
+        <p>View <a href="/erd">ERD</a> | Visit <a href="https://wd-web.rsysdemo.com" target="_blank">Homepage</a></p>
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="password-box" title="Password">
+            <h3>Password</h3>
+            <input type="password" id="password" class="password" size="15"
+                onkeypress="(e)=>{if(e.keyCode===13){isReloadRequest?reloadServer():getLogs();}else{window.alert(e)}}" />
+            <div class="btn-container">
+                <div class="btn green" onclick="isReloadRequest?reloadServer():getLogs();">Submit</div>
+                <div class="btn red" onclick="closeForm()">Cancel</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
