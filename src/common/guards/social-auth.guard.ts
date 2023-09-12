@@ -1,15 +1,14 @@
 import { JWT_AUTH_GUARD } from '@micro-nest/rest';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { User } from '@prisma/client';
-import { UserService } from 'src/modules/user/user.service';
+import { PrismaClient, User } from '@prisma/client';
 import { SocialLoginDto } from '../dto/social-login.dto';
 import { IsSocialTokenValid } from '../rules/is-social-token-valid.rule';
 
 @Injectable()
 export class SocialAuthGuard extends AuthGuard(JWT_AUTH_GUARD) {
   constructor(
-    private readonly usersService: UserService,
+    private prisma: PrismaClient,
     private readonly tokenValidator: IsSocialTokenValid,
   ) {
     super();
@@ -31,6 +30,12 @@ export class SocialAuthGuard extends AuthGuard(JWT_AUTH_GUARD) {
     headers: Record<string, any>,
   ): Promise<User> {
     const data = await this.tokenValidator.verifyIdToken(body, headers);
-    return this.usersService.findOrCreate(data, headers);
+    let user = await this.prisma.user.findUnique({
+      where: { email: data.email },
+    });
+    if (!user) {
+      user = await this.prisma.user.create({ data });
+    }
+    return user;
   }
 }
