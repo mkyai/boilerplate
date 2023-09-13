@@ -29,7 +29,7 @@ export class SocialAuthGuard extends AuthGuard(JWT_AUTH_GUARD) {
     body: SocialLoginDto,
     headers: Record<string, any>,
   ): Promise<User> {
-    const data = await this.tokenValidator.verifyIdToken(body, headers);
+    const data: any = await this.tokenValidator.verifyIdToken(body, headers);
     let user = await this.prisma.user.findUnique({
       where: { email: data.email },
     });
