@@ -15,6 +15,7 @@ import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
 const { auth: summary }: any = summaryData;
+const _ = { summary };
 
 @ApiController()
 export class AuthController {
