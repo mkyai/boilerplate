@@ -48,7 +48,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/terminus": "^9.2.2",
     "@nestjs/throttler": "^4.1.0",
-    "@prisma/client": "^5.1.1",
+    "@prisma/client": "^5.4.1",
     "@sendinblue/client": "^3.3.1",
     "@types/passport": "^1.0.12",
     "bcryptjs": "^2.4.3",
