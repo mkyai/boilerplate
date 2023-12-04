@@ -46,7 +46,7 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/passport": "^10.0.0",
     "@nestjs/platform-express": "^9.0.0",
-    "@nestjs/terminus": "^9.2.2",
+    "@nestjs/terminus": "^10.2.0",
     "@nestjs/throttler": "^4.1.0",
     "@prisma/client": "^5.1.1",
     "@sendinblue/client": "^3.3.1",
