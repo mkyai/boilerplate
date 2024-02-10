@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create Environment
-        uses: mkyai/env-builder@v2.0.0-0 
+      - name: Env Builder
+        uses: mkyai/env-builder@2.0.0-0
         with:
           secrets: ${{ toJson(secrets) }}
           variables: ${{ toJson(vars) }}
