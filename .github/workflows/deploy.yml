@@ -14,14 +14,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create Environment
-        uses: mkyai/env-builder@v1.0.1
+        uses: mkyai/env-builder@v2.0.0-0 
         with:
           secrets: ${{ toJson(secrets) }}
           variables: ${{ toJson(vars) }}
 
-      # - name: Get Artifacts
-      #   run: |
-      #     curl -o artifacts ${{ secrets.ARTIFACTS_URL }}
-
-      - name: Deploy
-        uses: mkyai/zip-deploy@v1.0.7
